@@ -55,7 +55,7 @@ ROOT_URLCONF = 'vyral.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],  # Point to the templates folder
+        'DIRS': [BASE_DIR / "templates"],  # Ensure this points to your templates folder
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
