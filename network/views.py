@@ -1,6 +1,12 @@
-from django.shortcuts import render
-from django.http import HttpResponse  # To send a basic HTTP response
-# Create your views here.
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
 
-def test_view(request):
-    return HttpResponse("Hello this is the network app test view") # This is a placeholder view that sends a simple response to test routing
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the new user
+            return redirect('login')  # Redirect to the login page
+    else:
+        form = UserCreationForm()  # Show an empty form for GET requests
+    return render(request, 'registration/signup.html', {'form': form})
