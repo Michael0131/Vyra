@@ -1,28 +1,39 @@
-{% extends "base.html" %}  <!-- Extend the base template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width={% extends "base.html" %}  <!-- Extend the base template -->
 
-{% block title %}Log In{% endblock %}
-
-{% block content %}
-<div class="login-container">
-    <h2>Welcome Back!</h2>
-    <form method="post">
-        {% csrf_token %}  <!-- Protect the form -->
-        
-        <!-- Customize how the form is displayed -->
-        <div>
-            <label for="username">Username:</label>
-            {{ form.username }}  <!-- Render the username field -->
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            {{ form.password }}  <!-- Render the password field -->
-        </div>
-
-        <button type="submit">Log In</button>
-    </form>
-
-    <!-- Add links for user actions -->
-    <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
-    <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>.</p>
-</div>
-{% endblock %}
+    {% block title %}Log In{% endblock %}
+    
+    {% block content %}
+    <div class="login-container">
+        <h2>Welcome Back!</h2>
+        <form method="post">
+            {% csrf_token %}  <!-- Protect the form -->
+            
+            <!-- Customize how the form is displayed -->
+            <div>
+                <label for="username">Username:</label>
+                {{ form.username }}  <!-- Render the username field -->
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                {{ form.password }}  <!-- Render the password field -->
+            </div>
+    
+            <button type="submit">Log In</button>
+        </form>
+    
+        <!-- Add links for user actions -->
+        <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+        <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>.</p>
+    </div>
+    {% endblock %}
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
